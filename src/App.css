@@ -1,0 +1,21 @@
+#root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  .mainSection {
+    flex-grow: 1;
+  }
+  
+  /* .banner {
+    height: 400px;
+    object-fit: cover;
+    overflow: hidden;
+  } */
+  
+  /* @media (max-width: 575.98px) {
+    .banner {
+      height: fit-content;
+    }
+  }
+   */

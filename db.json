@@ -1,0 +1,20 @@
+{
+  "recetas": [
+    {
+      "id": "1",
+      "nombreReceta": "Café",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Una taza de café suave y aromático.",
+      "descripcionAmplia": "Una taza de café suave y aromático con más detalles",
+      "imagen": "url"
+    },
+    {
+      "id": "2",
+      "nombreReceta": "Té",
+      "categoria": "Infusiones",
+      "descripcionBreve": "Una taza de té suave y aromático.",
+      "descripcionAmplia": "Una taza de té suave y aromático con más detalles",
+      "imagen": "url"
+    }
+  ]
+}
