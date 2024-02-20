@@ -7,15 +7,15 @@
     flex-grow: 1;
   }
   
-  /* .banner {
+  .banner {
     height: 400px;
     object-fit: cover;
     overflow: hidden;
-  } */
+  }
   
-  /* @media (max-width: 575.98px) {
+  @media (max-width: 575.98px) {
     .banner {
       height: fit-content;
     }
   }
-   */
+  

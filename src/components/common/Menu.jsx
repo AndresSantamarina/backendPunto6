@@ -3,15 +3,12 @@ import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
+    <Navbar expand="lg" className="bg-body-light">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <img
-            src=""
-            alt="logo de RollingCoffee"
-            className="img-fluid"
-            width={150}
-          />
+          <div>
+            <h1>Recetas</h1>
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -2,18 +2,42 @@
   "recetas": [
     {
       "id": "1",
-      "nombreReceta": "Café",
+      "nombreReceta": "Spaghetti Bolognese",
       "categoria": "Infusiones",
-      "descripcionBreve": "Una taza de café suave y aromático.",
-      "descripcionAmplia": "Una taza de café suave y aromático con más detalles",
+      "ingredientes": "400 g de carne molida de res, 1 cebolla picada, 2 dientes de ajo picados, 1 lata de tomate triturado, 2 cucharadas de pasta de tomate, sal y pimienta al gusto, 300 g de spaghetti cocidos",
+      "instrucciones": "En una sartén, sofríe la cebolla y el ajo hasta que estén dorados. Agrega la carne molida y cocina hasta que se dore. Añade el tomate triturado, la pasta de tomate, sal y pimienta. Cocina a fuego lento durante 20-30 minutos. Sirve la salsa sobre los spaghetti cocidos.",
       "imagen": "url"
     },
     {
       "id": "2",
-      "nombreReceta": "Té",
+      "nombreReceta": "Ensalada César con Pollo",
       "categoria": "Infusiones",
-      "descripcionBreve": "Una taza de té suave y aromático.",
-      "descripcionAmplia": "Una taza de té suave y aromático con más detalles",
+      "ingredientes": "Pechugas de pollo a la parrilla, lechuga romana, crutones, queso parmesano rallado, aderezo César",
+      "instrucciones": "Corta las pechugas de pollo en tiras. En un tazón grande, mezcla la lechuga, los crutones y el queso parmesano. Agrega las tiras de pollo a la ensalada. Rocía con aderezo César y mezcla bien antes de servir.",
+      "imagen": "url"
+    },
+    {
+      "id": "3",
+      "nombreReceta": "Tacos de Pescado",
+      "categoria": "Infusiones",
+      "ingredientes": "Filetes de pescado blanco, tortillas de maíz, repollo rallado, salsa de yogur, limón, cilantro fresco",
+      "instrucciones": "Cocina los filetes de pescado a la parrilla o en una sartén hasta que estén bien cocidos. Calienta las tortillas de maíz. Coloca los filetes de pescado en las tortillas y agrega repollo rallado, salsa de yogur, limón y cilantro al gusto.",
+      "imagen": "url"
+    },
+    {
+      "id": "4",
+      "nombreReceta": "Piña Colada:",
+      "categoria": "Infusiones",
+      "ingredientes": "1 taza de piña fresca en trozos, 1/2 taza de crema de coco, 1/2 taza de ron blanco, 2 tazas de hielo triturado, rodajas de piña y hojas de menta para decorar (opcional)",
+      "instrucciones": "En una licuadora, combina la piña fresca, la crema de coco, el ron blanco y el hielo triturado. Mezcla hasta obtener una consistencia suave y cremosa. Vierte la mezcla en vasos. Opcional: Decora con rodajas de piña y hojas de menta. Sirve inmediatamente y disfruta de esta deliciosa Piña Colada.",
+      "imagen": "url"
+    },
+    {
+      "id": "5",
+      "nombreReceta": "Fresas con Chocolate",
+      "categoria": "Infusiones",
+      "ingredientes": "Fresas frescas, chocolate negro o con leche, picado",
+      "instrucciones": "Derrite el chocolate en el microondas o a baño maría. Sumerge cada fresa en el chocolate derretido, asegurándote de cubrirla bien. Coloca las fresas en una bandeja con papel pergamino. Refrigera durante unos 15-20 minutos o hasta que el chocolate esté firme. ¡Sirve y disfruta de estas deliciosas Fresas con Chocolate!",
       "imagen": "url"
     }
   ]

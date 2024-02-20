@@ -78,52 +78,52 @@ const FormularioReceta = () => {
             {errors.categoria?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formDescripcionBreve">
-          <Form.Label>Descripción breve*</Form.Label>
+        <Form.Group className="mb-3" controlId="formIngredientes">
+          <Form.Label>Ingredientes*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: Una taza de café suave y aromático."
             as="textarea"
-            {...register("descripcionBreve", {
-              required: "La descripción breve del producto es obligatoria",
+            {...register("ingredientes", {
+              required: "Los ingredientes de la receta son obligatorios",
               minLength: {
                 value: 20,
                 message:
-                  "La descripción breve del producto debe tener como mínimo 20 caracteres",
+                  "Los ingredientes deben tener como mínimo 20 caracteres",
               },
               maxLength: {
-                value: 100,
+                value: 400,
                 message:
-                  "La descripción breve del producto debe tener como máximo 100 caracteres",
+                  "Los ingredientes deben tener como máximo 400 caracteres",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.descripcionBreve?.message}
+            {errors.ingredientes?.message}
           </Form.Text>
         </Form.Group>
-        <Form.Group className="mb-3" controlId="formDescripcionAmplia">
-          <Form.Label>Descripción Amplia*</Form.Label>
+        <Form.Group className="mb-3" controlId="formInstrucciones">
+          <Form.Label>Instrucciones*</Form.Label>
           <Form.Control
             type="text"
             placeholder="Ej: El café americano es una bebida caliente que consiste en un espresso diluido con agua caliente, lo que resulta en una taza de café suave y aromático. Es una opción popular para aquellos que prefieren un café menos intenso que el espresso tradicional. Perfecto para disfrutar en cualquier momento del día."
             as="textarea"
-            {...register("descripcionAmplia", {
-              required: "La descripción amplia del producto es obligatorio",
+            {...register("instrucciones", {
+              required: "Las instrucciones de la receta son obligatorias",
               minLength: {
                 value: 150,
                 message:
-                  "La descripción amplia del producto debe tener como mínimo 150 caracteres",
+                  "Las instrucciones de la receta deben tener como mínimo 150 caracteres",
               },
               maxLength: {
-                value: 600,
+                value: 1000,
                 message:
-                  "La descripción amplia del producto debe tener como máximo 600 caracteres",
+                  "Las instrucciones de la receta deben tener como máximo 1000 caracteres",
               },
             })}
           />
           <Form.Text className="text-danger">
-            {errors.descripcionAmplia?.message}
+            {errors.instrucciones?.message}
           </Form.Text>
         </Form.Group>
 
