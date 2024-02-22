@@ -1,15 +1,39 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
+import { crearRecetaPI } from "../../../helpers/queries";
+import Swal from "sweetalert2";
 
-const FormularioReceta = () => {
+const FormularioReceta = ({editar}) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm();
 
-  const recetaValidada = (receta) => {
+  const recetaValidada = async (receta) => {
     console.log(receta);
+    if (editar === true) {
+      //agregar la logica cuando edito
+      console.log("Aqui tengo que editar");
+    } else {
+      //solicitar a la api guardar un producto nuevo
+      const respuesta = await crearRecetaPI(receta);
+      if (respuesta.status === 201) {
+        Swal.fire({
+          title: "Receta creada",
+          text: `La receta ${receta.nombreReceta} fue creada correctamente`,
+          icon: "success",
+        });
+        reset();
+      } else {
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: `La receta ${receta.nombreReceta} no pudo ser creada, intente esta operación en unos minutos.`,
+          icon: "error",
+        });
+      }
+    }
   };
 
   return (
@@ -46,16 +70,10 @@ const FormularioReceta = () => {
             type="text"
             placeholder="Ej: https://www.pexels.com/es-es/vans-en-blanco-y-negro-fuera-de-la-decoracion-para-colgar-en-la-pared-1230679/"
             {...register("imagen", {
-              required: "La URL de la imagen es obligatoria",
-              minLength: {
-                value: 5,
-                message:
-                  "La URL de la imagen debe de ser mayor a los 5 caracteres",
-              },
-              maxLength: {
-                value: 500,
-                message:
-                  "La URL de la imagen debe de ser menor a los 500 caracteres",
+              required: "La imagen es obligatoria",
+              pattern: {
+                value: /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|gif|png)/,
+                message: "Debe ingresar una URL valida (jpg|jpeg|gif|png)",
               },
             })}
           />
@@ -65,9 +83,11 @@ const FormularioReceta = () => {
         </Form.Group>
         <Form.Group className="mb-3" controlId="formCategoria">
           <Form.Label>Categoría*</Form.Label>
-          <Form.Select {...register("categoria",{
-            required: "Seleccione una opción válida"
-          })}>
+          <Form.Select
+            {...register("categoria", {
+              required: "Seleccione una opción válida",
+            })}
+          >
             <option value="">Seleccione una opcion</option>
             <option value="Infusiones">Infusiones</option>
             <option value="Batidos">Batidos</option>

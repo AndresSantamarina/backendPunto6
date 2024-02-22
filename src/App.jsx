@@ -21,8 +21,13 @@ function App() {
         <Route exact path="/administrador" element={<Administrar />}></Route>
         <Route
           exact
-          path="/administrador/formulario"
-          element={<FormularioReceta />}
+          path="/administrador/crear"
+          element={<FormularioReceta editar={false}/>}
+        ></Route>
+         <Route
+          exact
+          path="/administrador/editar/:id"
+          element={<FormularioReceta editar={true}/>}
         ></Route>
          <Route
           exact

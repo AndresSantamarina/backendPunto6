@@ -27,7 +27,7 @@ const Administrar = () => {
     <Container>
       <div className="d-flex justify-content-between align-items-center">
         <h1 className="display-5 my-3">Recetas disponibles</h1>
-        <Link to="formulario" className="my-3 btn btn-primary">
+        <Link to="crear" className="my-3 btn btn-primary">
           <i className="bi bi-file-earmark-plus"></i>
         </Link>
       </div>
@@ -44,7 +44,7 @@ const Administrar = () => {
         </thead>
         <tbody>
           {recetas.map((receta) => 
-            <ItemReceta key={receta.id} receta={receta} />)
+            <ItemReceta key={receta.id} receta={receta} setRecetas={setRecetas}/>)
           }
         </tbody>
       </Table>

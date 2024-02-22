@@ -12,3 +12,40 @@ export const leerRecetasAPI = async () => {
         console.log(error);
     }
 }
+
+//POST
+export const crearRecetaPI = async (recetaNueva) => {
+    try {
+        const respuesta = await fetch(URL_Recetas, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(recetaNueva)
+        });
+        console.log(respuesta);
+        return respuesta;
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+
+
+
+
+
+//PUT - PATCH
+//DELETE
+
+export const borrarRecetaAPI = async (id) => {
+    try {
+        const respuesta = await fetch(`${URL_Recetas}/${id}`, {
+            method: "DELETE"
+        });
+        console.log(respuesta);
+        return respuesta;
+    } catch (error) {
+        console.log(error)
+    }
+}
