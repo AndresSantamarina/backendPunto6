@@ -1,21 +1,69 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { crearRecetaPI } from "../../../helpers/queries";
+import {
+  crearRecetaPI,
+  editarRecetaAPI,
+  obtenerRecetaAPI,
+} from "../../../helpers/queries";
 import Swal from "sweetalert2";
+import { useNavigate, useParams } from "react-router-dom";
+import { useEffect } from "react";
 
-const FormularioReceta = ({editar}) => {
+const FormularioReceta = ({ editar, titulo }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
     reset,
+    setValue,
   } = useForm();
+
+  const { id } = useParams();
+
+  const navegacion = useNavigate();
+
+  const cargarDatosReceta = async () => {
+    try {
+      const respuesta = await obtenerRecetaAPI(id);
+      if (respuesta.status === 200) {
+        const recetaEncontrada = await respuesta.json();
+        setValue("nombreReceta", recetaEncontrada.nombreReceta);
+        setValue("imagen", recetaEncontrada.imagen);
+        setValue("categoria", recetaEncontrada.categoria);
+        setValue("instrucciones", recetaEncontrada.instrucciones);
+        setValue("ingredientes", recetaEncontrada.ingredientes);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(() => {
+    if (editar === true) {
+      cargarDatosReceta();
+    }
+  }, []);
 
   const recetaValidada = async (receta) => {
     console.log(receta);
     if (editar === true) {
       //agregar la logica cuando edito
       console.log("Aqui tengo que editar");
+      const respuesta = await editarRecetaAPI(receta, id);
+      if (respuesta.status === 200) {
+        Swal.fire({
+          title: "Receta modificada",
+          text: `La receta ${receta.nombreReceta} fue modificada correctamente`,
+          icon: "success",
+        });
+        navegacion("/administrador");
+      } else {
+        Swal.fire({
+          title: "Ocurrió un error",
+          text: `La receta ${receta.nombreReceta} no pudo ser modificada, intente esta operación en unos minutos.`,
+          icon: "error",
+        });
+      }
     } else {
       //solicitar a la api guardar un producto nuevo
       const respuesta = await crearRecetaPI(receta);
@@ -38,7 +86,7 @@ const FormularioReceta = ({editar}) => {
 
   return (
     <section className="container mainSection">
-      <h1 className="display-4 mt-5">Nueva receta</h1>
+      <h1 className="display-4 mt-5">{titulo}</h1>
       <hr />
       <Form className="my-4" onSubmit={handleSubmit(recetaValidada)}>
         <Form.Group className="mb-3" controlId="formNombreReceta">

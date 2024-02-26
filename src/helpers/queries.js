@@ -2,6 +2,7 @@ const URL_Recetas = import.meta.env.VITE_API_RECETA;
 
 console.log(URL_Recetas);
 
+//GET
 export const leerRecetasAPI = async () => {
     try {
         const respuesta = await fetch(URL_Recetas);
@@ -12,6 +13,17 @@ export const leerRecetasAPI = async () => {
         console.log(error);
     }
 }
+
+//GET devuelve un producto
+export const obtenerRecetaAPI = async (id) => {
+    try {
+        const respuesta = await fetch(URL_Recetas + '/' + id);
+        console.log(respuesta)
+        return respuesta
+    } catch (error) {
+        console.log(error);
+    }
+};
 
 //POST
 export const crearRecetaPI = async (recetaNueva) => {
@@ -30,12 +42,22 @@ export const crearRecetaPI = async (recetaNueva) => {
     }
 }
 
+//PUT
+export const editarRecetaAPI = async (recetaModificada, id) => {
+    try {
+        const respuesta = await fetch(`${URL_Recetas}/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(recetaModificada)
+        });
+        return respuesta;
+    } catch (error) {
+        console.log(error)
+    }
+}
 
-
-
-
-
-//PUT - PATCH
 //DELETE
 
 export const borrarRecetaAPI = async (id) => {
