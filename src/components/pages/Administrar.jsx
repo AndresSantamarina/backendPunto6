@@ -24,7 +24,7 @@ const Administrar = () => {
   };
 
   return (
-    <Container>
+    <Container className="mainSection">
       <div className="d-flex justify-content-between align-items-center">
         <h1 className="display-5 my-3">Recetas disponibles</h1>
         <Link to="crear" className="my-3 btn btn-primary">

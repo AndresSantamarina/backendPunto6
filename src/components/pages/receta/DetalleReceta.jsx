@@ -22,7 +22,7 @@ const DetalleReceta = () => {
   }, []);
 
   return (
-    <Container className="d-flex justify-content-center">
+    <Container className="d-flex justify-content-center mainSection">
       <Card className="d-flex w-75">
         <Row>
           <Col>
