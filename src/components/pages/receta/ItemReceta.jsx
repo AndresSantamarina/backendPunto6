@@ -39,14 +39,14 @@ const ItemReceta = ({ receta, setRecetas }) => {
   };
 
   return (
-    <tr>
-      <td className="text-center">{receta.id}</td>
+    <tr className="filaTabla">
+      <td className="text-center fw-bold">{receta.id}</td>
       <td>{receta.nombreReceta}</td>
       <td className="text-center">
         <img
           src={receta.imagen}
           alt={receta.nombreReceta}
-          className="img-thumbnail"
+          className="img-thumbnail img-fluid imgRecetaTabla"
         />
       </td>
       <td>{receta.categoria}</td>

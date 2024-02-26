@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { useParams } from "react-router";
-import { obtenerDetallesRecetaAPI, obtenerRecetaAPI } from "../../../helpers/queries";
+import { obtenerDetallesRecetaAPI } from "../../../helpers/queries";
 import { useEffect, useState } from "react";
 
 const DetalleReceta = () => {
@@ -23,7 +23,7 @@ const DetalleReceta = () => {
 
   return (
     <Container className="d-flex justify-content-center mainSection">
-      <Card className="d-flex w-75">
+      <Card className="d-flex w-75 my-5 justify-content-center">
         <Row>
           <Col>
             {receta && receta.imagen && (
@@ -37,18 +37,17 @@ const DetalleReceta = () => {
           <Col>
             <Card.Body className="d-flex flex-column justify-content-start">
               <Card.Title className="fw-bold">
-                {receta ? receta.nombreReceta : 'Cargando...'}
+                {receta ? receta.nombreReceta : "Cargando..."}
               </Card.Title>
               <Card.Text>
-                <p>{receta ? receta.instrucciones : 'Cargando...'}</p>
+                <p className="instruccionesReceta">{receta ? receta.instrucciones : "Cargando..."}</p>
 
                 <p>
-                  {' '}
-                  <span className="text-success fw-bold"> Categoría: </span>
-                  {receta ? receta.categoria : 'Cargando...'} <br />
-                  <span className="text-success fw-bold">
-                    Ingredientes: {receta ? receta.ingredientes : 'Cargando...'}
-                  </span>
+                  {" "}
+                  <span className="fw-bold"> Categoría: </span>
+                  {receta ? receta.categoria : "Cargando..."} <br />
+                  <span className="fw-bold">Ingredientes: </span>{" "}
+                  {receta ? receta.ingredientes : "Cargando..."}
                 </p>
               </Card.Text>
             </Card.Body>
@@ -56,7 +55,7 @@ const DetalleReceta = () => {
         </Row>
       </Card>
     </Container>
-);
+  );
 };
 
 export default DetalleReceta;

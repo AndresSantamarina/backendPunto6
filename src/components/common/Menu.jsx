@@ -3,12 +3,17 @@ import { Link, NavLink } from "react-router-dom";
 
 const Menu = () => {
   return (
-    <Navbar expand="lg" className="bg-body-light">
+    <Navbar expand="lg" className="bg-body-light navColor">
       <Container>
         <Navbar.Brand as={Link} to="/">
-          <div>
-            <h1>Recetas</h1>
-          </div>
+        <img
+              alt="logo de comida"
+              src="https://cdn-icons-png.flaticon.com/128/685/685352.png"
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+            />{' '}
+            Blog de Recetas
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
