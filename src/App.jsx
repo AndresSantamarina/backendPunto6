@@ -31,7 +31,7 @@ function App() {
         ></Route>
          <Route
           exact
-          path="/detalle"
+          path="/detalle/:id"
           element={<DetalleReceta />}
         ></Route>
         <Route path="*" element={<Error404 />}></Route>

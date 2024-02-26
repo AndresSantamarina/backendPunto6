@@ -25,6 +25,17 @@ export const obtenerRecetaAPI = async (id) => {
     }
 };
 
+//GET detalles
+export const obtenerDetallesRecetaAPI = async (id) => {
+    try {
+        const respuesta = await fetch(URL_Recetas + '/' + id);
+        const detallesReceta = await respuesta.json(); // Extraer JSON
+        return detallesReceta;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
 //POST
 export const crearRecetaPI = async (recetaNueva) => {
     try {
