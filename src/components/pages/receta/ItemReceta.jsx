@@ -16,7 +16,6 @@ const ItemReceta = ({ receta, setRecetas }) => {
       cancelButtonText: "Salir",
     }).then(async (result) => {
       if (result.isConfirmed) {
-        //Agregar la lógica si quiero borrar
         const respuesta = await borrarRecetaAPI(receta.id);
         if (respuesta.status === 200) {
           Swal.fire({
@@ -24,7 +23,6 @@ const ItemReceta = ({ receta, setRecetas }) => {
             text: `La receta "${receta.nombreReceta}" fue eliminada correctamente`,
             icon: "success",
           });
-          //actualizar la tabla de recetas
           const listaRecetas = await leerRecetasAPI();
           setRecetas(listaRecetas);
         } else {

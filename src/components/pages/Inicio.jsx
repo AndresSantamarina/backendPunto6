@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Container, Row } from "react-bootstrap";
 import CardReceta from "./receta/CardReceta";
 import banner from "../../assets/banner.avif";
 import { leerRecetasAPI } from "../../helpers/queries";

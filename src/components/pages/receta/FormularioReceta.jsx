@@ -47,7 +47,6 @@ const FormularioReceta = ({ editar, titulo }) => {
   const recetaValidada = async (receta) => {
     console.log(receta);
     if (editar === true) {
-      //agregar la logica cuando edito
       console.log("Aqui tengo que editar");
       const respuesta = await editarRecetaAPI(receta, id);
       if (respuesta.status === 200) {
@@ -65,7 +64,6 @@ const FormularioReceta = ({ editar, titulo }) => {
         });
       }
     } else {
-      //solicitar a la api guardar un producto nuevo
       const respuesta = await crearRecetaPI(receta);
       if (respuesta.status === 201) {
         Swal.fire({
