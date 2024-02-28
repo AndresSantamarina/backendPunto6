@@ -11,7 +11,6 @@ import Administrar from "./components/pages/Administrar";
 import Error404 from "./components/pages/Error404";
 
 //npx json-server db.json
-
 function App() {
   return (
     <BrowserRouter>

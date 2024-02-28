@@ -5,8 +5,6 @@ import { useState, useEffect } from "react";
 import { leerRecetasAPI } from "../../helpers/queries";
 import ItemReceta from "./receta/ItemReceta";
 
-
-
 const Administrar = () => {
   const [recetas, setRecetas] = useState([]);
 
