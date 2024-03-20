@@ -40,8 +40,9 @@ const DetalleReceta = () => {
                 {receta ? receta.nombreReceta : "Cargando..."}
               </Card.Title>
               <Card.Text>
-                <p className="instruccionesReceta">{receta ? receta.instrucciones : "Cargando..."}</p>
-
+                <p className="instruccionesReceta">
+                  {receta ? receta.instrucciones : "Cargando..."}
+                </p>
                 <p>
                   {" "}
                   <span className="fw-bold"> Categoría: </span>

@@ -20,7 +20,7 @@ const CardReceta = ({receta}) => {
           </Card.Text>
         </Card.Body>
         <Card.Footer className="text-end">
-          <Link to={"detalle/" + receta.id} className="btn btn-grad text-light me-2">
+          <Link to={"detalle/" + receta._id} className="btn btn-grad text-light me-2">
             Ver más
           </Link>
         </Card.Footer>
