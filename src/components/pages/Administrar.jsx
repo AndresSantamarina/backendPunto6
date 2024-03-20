@@ -33,7 +33,7 @@ const Administrar = () => {
       <Table responsive bordered hover className="text-center">
         <thead>
           <tr>
-            <th>Cod</th>
+            {/* <th>Cod</th> */}
             <th>Receta</th>
             <th>Imagen</th>
             <th>Categoría</th>
