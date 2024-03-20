@@ -17,11 +17,11 @@ const Login = ({ setUsuarioLogueado }) => {
     if (login(usuario)) {
       Swal.fire({
         title: "Usuario logueado",
-        text: `Bienvenido ${usuario.mail}`,
+        text: `Bienvenido ${usuario.email}`,
         icon: "success",
       });
       navegacion("/administrador");
-      setUsuarioLogueado(usuario.mail);
+      setUsuarioLogueado(usuario.email);
     } else {
       Swal.fire({
         title: "Ocurrió un error",
@@ -64,7 +64,7 @@ const Login = ({ setUsuarioLogueado }) => {
               </Form.Text>
             </Form.Group>
 
-            <Form.Group className="mb-3" controlId="formBasicPassword">
+            <Form.Group className="mb-3" controlId="formPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
                 type="password"
@@ -80,7 +80,7 @@ const Login = ({ setUsuarioLogueado }) => {
                     message: "el maximo es de 30 caracteres",
                   },
                   pattern: {
-                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,30}$/,
+                    value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/,
                     message:
                       "El password debe contener al menos una letra mayúscula, una letra minúscula y un número",
                   },

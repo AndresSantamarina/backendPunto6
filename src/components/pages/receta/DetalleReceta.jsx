@@ -39,17 +39,13 @@ const DetalleReceta = () => {
               <Card.Title className="fw-bold">
                 {receta ? receta.nombreReceta : "Cargando..."}
               </Card.Title>
-              <Card.Text>
-                <p className="instruccionesReceta">
-                  {receta ? receta.instrucciones : "Cargando..."}
-                </p>
-                <p>
-                  {" "}
-                  <span className="fw-bold"> Categoría: </span>
-                  {receta ? receta.categoria : "Cargando..."} <br />
-                  <span className="fw-bold">Ingredientes: </span>{" "}
-                  {receta ? receta.ingredientes : "Cargando..."}
-                </p>
+              <Card.Text className="instruccionesReceta">
+                {receta ? receta.instrucciones : "Cargando..."}
+                <br />
+                <span className="fw-bold"> Categoría: </span>
+                {receta ? receta.categoria : "Cargando..."} <br />
+                <span className="fw-bold">Ingredientes: </span>{" "}
+                {receta ? receta.ingredientes : "Cargando..."}
               </Card.Text>
             </Card.Body>
           </Col>

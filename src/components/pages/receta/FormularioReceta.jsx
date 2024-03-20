@@ -1,7 +1,7 @@
 import { Form, Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import {
-  crearRecetaPI,
+  crearRecetaAPI,
   editarRecetaAPI,
   obtenerRecetaAPI,
 } from "../../../helpers/queries";
@@ -62,7 +62,7 @@ const FormularioReceta = ({ editar, titulo }) => {
         });
       }
     } else {
-      const respuesta = await crearRecetaPI(receta);
+      const respuesta = await crearRecetaAPI(receta);
       if (respuesta.status === 201) {
         Swal.fire({
           title: "Receta creada",
@@ -133,10 +133,10 @@ const FormularioReceta = ({ editar, titulo }) => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Infusiones">Dulce</option>
-            <option value="Batidos">Salado</option>
-            <option value="dulce">Agridulce</option>
-            <option value="salado">Bebida</option>
+            <option value="Dulce">Dulce</option>
+            <option value="Salado">Salado</option>
+            <option value="Agridulce">Agridulce</option>
+            <option value="Bebida">Bebida</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}

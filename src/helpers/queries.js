@@ -24,14 +24,14 @@ export const obtenerRecetaAPI = async (id) => {
 export const obtenerDetallesRecetaAPI = async (id) => {
     try {
         const respuesta = await fetch(URL_Receta + '/' + id);
-        const detallesReceta = await respuesta.json(); // Extraer JSON
+        const detallesReceta = await respuesta.json();
         return detallesReceta;
     } catch (error) {
         console.log(error);
     }
 };
 
-export const crearRecetaPI = async (recetaNueva) => {
+export const crearRecetaAPI = async (recetaNueva) => {
     try {
         const respuesta = await fetch(URL_Recetas, {
             method: "POST",
@@ -73,13 +73,13 @@ export const borrarRecetaAPI = async (id) => {
 }
 
 const userAdmin = {
-    mail: "usuarioRecetas@gmail.com",
+    email: "usuarioRecetas9@gmail.com",
     password: "123Aa$123"
 }
 
 export const login = (usuario)=>{
-    if (usuario.mail === userAdmin.mail && usuario.password === userAdmin.password){
-        sessionStorage.setItem('usuarioRecetas', JSON.stringify(usuario.mail))
+    if (usuario.email === userAdmin.email && usuario.password === userAdmin.password){
+        sessionStorage.setItem('usuarioRecetas', JSON.stringify(usuario.email))
         return true
     }else{
         return false

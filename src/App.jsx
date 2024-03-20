@@ -25,7 +25,7 @@ function App() {
         <Route exact path="/" element={<Inicio />}></Route>
         <Route
           exact
-          path="/administrador"
+          path="/administrador/*"
           element={
             <RutasProtegidas>
               <RutasAdmin />
