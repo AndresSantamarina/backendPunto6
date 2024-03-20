@@ -33,7 +33,6 @@ const Administrar = () => {
       <Table responsive bordered hover className="text-center">
         <thead>
           <tr>
-            {/* <th>Cod</th> */}
             <th>Receta</th>
             <th>Imagen</th>
             <th>Categoría</th>
@@ -42,7 +41,7 @@ const Administrar = () => {
         </thead>
         <tbody>
           {recetas.map((receta) => 
-            <ItemReceta key={receta.id} receta={receta} setRecetas={setRecetas}/>)
+            <ItemReceta key={receta._id} receta={receta} setRecetas={setRecetas}/>)
           }
         </tbody>
       </Table>
