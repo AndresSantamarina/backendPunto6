@@ -45,9 +45,7 @@ const FormularioReceta = ({ editar, titulo }) => {
   }, []);
 
   const recetaValidada = async (receta) => {
-    console.log(receta);
     if (editar === true) {
-      console.log("Aqui tengo que editar");
       const respuesta = await editarRecetaAPI(receta, id);
       if (respuesta.status === 200) {
         Swal.fire({
@@ -91,7 +89,7 @@ const FormularioReceta = ({ editar, titulo }) => {
           <Form.Label>Receta*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Cafe"
+            placeholder="Ej: Pizza"
             {...register("nombreReceta", {
               required: "El nombre de la receta es obligatorio",
               minLength: {
@@ -135,10 +133,10 @@ const FormularioReceta = ({ editar, titulo }) => {
             })}
           >
             <option value="">Seleccione una opcion</option>
-            <option value="Infusiones">Infusiones</option>
-            <option value="Batidos">Batidos</option>
-            <option value="dulce">Dulce</option>
-            <option value="salado">Salado</option>
+            <option value="Infusiones">Dulce</option>
+            <option value="Batidos">Salado</option>
+            <option value="dulce">Agridulce</option>
+            <option value="salado">Bebida</option>
           </Form.Select>
           <Form.Text className="text-danger">
             {errors.categoria?.message}
@@ -148,7 +146,7 @@ const FormularioReceta = ({ editar, titulo }) => {
           <Form.Label>Ingredientes*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: Una taza de café suave y aromático."
+            placeholder="Ej: Medio kilo de queso cremoso, tomates, etc."
             as="textarea"
             {...register("ingredientes", {
               required: "Los ingredientes de la receta son obligatorios",
@@ -172,19 +170,19 @@ const FormularioReceta = ({ editar, titulo }) => {
           <Form.Label>Instrucciones*</Form.Label>
           <Form.Control
             type="text"
-            placeholder="Ej: El café americano es una bebida caliente que consiste en un espresso diluido con agua caliente, lo que resulta en una taza de café suave y aromático. Es una opción popular para aquellos que prefieren un café menos intenso que el espresso tradicional. Perfecto para disfrutar en cualquier momento del día."
+            placeholder="Ej: Precalienta el horno a 180°C (350°F). Pelar y cortar las manzanas en rodajas finas. Reserva. En un molde para tarta previamente engrasado, extiende la lámina de masa quebrada y ajústala al molde. Puedes pinchar el fondo con un tenedor para evitar que suba durante el horneado. Distribuye las rodajas de manzana sobre la masa quebrada, cubriendo toda la superficie de manera uniforme. En una sartén, derrite la mantequilla..."
             as="textarea"
             {...register("instrucciones", {
-              required: "Las instrucciones de la receta son obligatorias",
+              required: "Las instrucciones de las recetas son obligatorias",
               minLength: {
                 value: 150,
                 message:
-                  "Las instrucciones de la receta deben tener como mínimo 150 caracteres",
+                  "Las instrucciones de las recetas deben tener como mínimo 150 caracteres",
               },
               maxLength: {
                 value: 1000,
                 message:
-                  "Las instrucciones de la receta deben tener como máximo 1000 caracteres",
+                  "Las instrucciones de la recetas deben tener como máximo 1000 caracteres",
               },
             })}
           />
